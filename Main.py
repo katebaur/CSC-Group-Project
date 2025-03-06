@@ -11,19 +11,43 @@ def show_items_color(item_inv_lst:dict) -> None:
     for key in item_inv_lst.keys():
         print('Color: {}'.format(key.color))
 
-shopping_cart = {'Total':0}
-print("Sofia and Kate's Apparel \n Shop for: \n Tops \n Bottoms \n Dresses")
-print('Shopping Cart:', shopping_cart)
-print("Type EXIT to leave.\nType BACK to go back")
+
+
+
+shopping_cart = {'Total': 0}
+
 
 while True:
-    search = input('What would you like to shop for? To check Shopping Cart type in SC')
+    print("Sofia and Kate's Apparel \n Shop for: \n Tops \n Bottoms \n Dresses")
+    print('Shopping Cart:', shopping_cart)
+    print('Type BACK to go back')
+    print('Type Checkout to checkout')
+    print('To check Shopping Cart type in SC')
+    search = input('What would you like to shop for?')
 
     if search.lower() == 'sc':
         print('Shopping Cart:',shopping_cart)
 
-    elif search.lower() == 'exit':
-        break
+    elif search.lower() == 'checkout':
+        answer = input('Cash or Card')
+        if answer.lower() == 'cash':
+            amount = input('Type in amount')
+            change = (float(amount) - shopping_cart['Total'])
+            print('Change is', change)
+            choice = input("Would you like your receipt")
+
+        elif answer.lower() == 'card':
+            while True:
+                card_number = input('Type in card numbers')
+                if len(card_number) < 16 or len(card_number) > 16:
+                    print('Invalid Card')
+                elif len(card_number) == 16:
+                    masked_card = ['x-x-x-x', 'x-x-x-x', 'x-x-x-x', card_number[12:16]]
+                    final_card = ' '.join(masked_card)
+                    print("Paid with Card:", final_card)
+        print("Receipt")
+
+
 
     # search browser for tops
     elif search.lower() == 'tops' or search.lower() == 'top':
