@@ -15,7 +15,7 @@ def show_items_color(item_inv_lst:dict):
 
 
 
-shopping_cart = {}
+shopping_cart = {'Total':0}
 print("Sofia and Kate's Apparel \n Shop for: \n Tops \n Bottoms \n Dresses")
 print('Shopping Cart:', shopping_cart)
 print("Type EXIT to leave.\nType BACK to go back")
@@ -29,6 +29,7 @@ while True:
     elif search.lower() == 'exit':
         break
 
+    # search brower for tops
     elif search.lower() == 'tops' or search.lower() == 'top':
         while True:
             print('Available Tops')
@@ -58,6 +59,7 @@ while True:
                                     except:
                                         shopping_cart[data.Color_Item(Inventory.Baby_Tee,'Pink')] = 1
                                     Inventory.BT_Inventory[data.Color_Item(Inventory.Baby_Tee, 'Pink')] -= 1
+                                    shopping_cart['Total'] += Inventory.Baby_Tee.price
                                     break
                                 else:
                                     print('OUT OF STOCK')
@@ -75,6 +77,7 @@ while True:
                                     except:
                                         shopping_cart[data.Color_Item(Inventory.Baby_Tee,'Yellow')] = 1
                                     Inventory.BT_Inventory[data.Color_Item(Inventory.Baby_Tee, 'Yellow')] -= 1
+                                    shopping_cart['Total'] += Inventory.Baby_Tee.price
                                     break
                                 else:
                                     print('OUT OF STOCK')
@@ -92,6 +95,7 @@ while True:
                                     except:
                                         shopping_cart[data.Color_Item(Inventory.Baby_Tee,'Green')] = 1
                                     Inventory.BT_Inventory[data.Color_Item(Inventory.Baby_Tee, 'Green')] -= 1
+                                    shopping_cart['Total'] += Inventory.Baby_Tee.price
                                     break
                                 else:
                                     print('OUT OF STOCK')
@@ -118,6 +122,7 @@ while True:
                                     except:
                                         shopping_cart[data.Color_Item(Inventory.Tank_Top,'Pink')] = 1
                                     Inventory.TaT_Inventory[data.Color_Item(Inventory.Tank_Top, 'Pink')] -= 1
+                                    shopping_cart['Total'] += Inventory.Tank_Top.price
                                     break
                                 else:
                                     print('OUT OF STOCK')
@@ -135,6 +140,7 @@ while True:
                                     except:
                                         shopping_cart[data.Color_Item(Inventory.Tank_Top,'Yellow')] = 1
                                     Inventory.TaT_Inventory[data.Color_Item(Inventory.Tank_Top, 'Yellow')] -= 1
+                                    shopping_cart['Total'] += Inventory.Tank_Top.price
                                     break
                                 else:
                                     print('OUT OF STOCK')
@@ -152,6 +158,7 @@ while True:
                                     except:
                                         shopping_cart[data.Color_Item(Inventory.Tank_Top,'Green')] = 1
                                     Inventory.TaT_Inventory[data.Color_Item(Inventory.Tank_Top, 'Green')] -= 1
+                                    shopping_cart['Total'] += Inventory.Tank_Top.price
                                     break
                                 else:
                                     print('OUT OF STOCK')
@@ -178,6 +185,7 @@ while True:
                                     except:
                                         shopping_cart[data.Color_Item(Inventory.Tube_Top,'Pink')] = 1
                                     Inventory.TuT_Inventory[data.Color_Item(Inventory.Tube_Top, 'Pink')] -= 1
+                                    shopping_cart['Total'] += Inventory.Tube_Top.price
                                     break
                                 else:
                                     print('OUT OF STOCK')
@@ -195,6 +203,7 @@ while True:
                                     except:
                                         shopping_cart[data.Color_Item(Inventory.Tube_Top,'Yellow')] = 1
                                     Inventory.TuT_Inventory[data.Color_Item(Inventory.Tube_Top, 'Yellow')] -= 1
+                                    shopping_cart['Total'] += Inventory.Tube_Top.price
                                     break
                             elif answer.lower() == 'no':
                                 break
@@ -209,19 +218,206 @@ while True:
                                     except:
                                         shopping_cart[data.Color_Item(Inventory.Tube_Top,'Green')] = 1
                                     Inventory.TuT_Inventory[data.Color_Item(Inventory.Tube_Top, 'Green')] -= 1
+                                    shopping_cart['Total'] += Inventory.Tube_Top.price
                                     break
                             elif answer.lower() == 'no':
                                 break
-
-
-
-
-
-
-
-
-
-
-
-
-
+    # search browser for bottoms
+    elif search.lower() == 'bottoms' or search.lower() == 'bottom':
+        while True:
+            print('Available Bottoms')
+            show_items(Inventory.Shorts)
+            choice = input('Type in what style')
+            if choice.lower() == 'back':
+                break
+            elif choice.lower() == 'sc':
+                print('Shopping Cart:',shopping_cart)
+            elif choice.lower() == 'jean shorts':
+                while True:
+                    print('Available Colors')
+                    show_items_color(Inventory.JS_Inventory)
+                    color_choice = input('Type in what color')
+                    if color_choice.lower() == 'sc':
+                        print('Shopping Cart:',shopping_cart)
+                    elif color_choice.lower() == 'back':
+                        break
+                    elif color_choice.lower() == 'light blue':
+                        while True:
+                            print('Add To Cart?(YES or NO)',Inventory.Jean_Shorts,'Color: Light Blue')
+                            answer = input()
+                            if answer.lower() == 'yes':
+                                if Inventory.JS_Inventory[data.Color_Item(Inventory.Jean_Shorts,'Light Blue')] >= 1:
+                                    try:
+                                        shopping_cart[data.Color_Item(Inventory.Jean_Shorts,'Light Blue')] += 1
+                                    except:
+                                        shopping_cart[data.Color_Item(Inventory.Jean_Shorts,'Light Blue')] = 1
+                                    Inventory.JS_Inventory[data.Color_Item(Inventory.Jean_Shorts, 'Light Blue')] -= 1
+                                    shopping_cart['Total'] += Inventory.Jean_Shorts.price
+                                    break
+                                else:
+                                    print('OUT OF STOCK')
+                                    break
+                            elif answer.lower() == 'no':
+                                break
+                    elif color_choice.lower() == 'black':
+                        while True:
+                            print('Add To Cart?(YES or NO)',Inventory.Jean_Shorts,'Color: Black')
+                            answer = input()
+                            if answer.lower() == 'yes':
+                                if Inventory.JS_Inventory[data.Color_Item(Inventory.Jean_Shorts,'Black')] >= 1:
+                                    try:
+                                        shopping_cart[data.Color_Item(Inventory.Jean_Shorts,'Black')] += 1
+                                    except:
+                                        shopping_cart[data.Color_Item(Inventory.Jean_Shorts,'Black')] = 1
+                                    Inventory.JS_Inventory[data.Color_Item(Inventory.Jean_Shorts, 'Black')] -= 1
+                                    shopping_cart['Total'] += Inventory.Jean_Shorts.price
+                                    break
+                                else:
+                                    print('OUT OF STOCK')
+                                    break
+                            elif answer.lower() == 'no':
+                                break
+                    elif color_choice.lower() == 'dark blue':
+                        while True:
+                            print('Add To Cart?(YES or NO)',Inventory.Jean_Shorts,'Color: Dark Blue')
+                            answer = input()
+                            if answer.lower() == 'yes':
+                                if Inventory.JS_Inventory[data.Color_Item(Inventory.Jean_Shorts,'Dark Blue')] >= 1:
+                                    try:
+                                        shopping_cart[data.Color_Item(Inventory.Jean_Shorts,'Dark Blue')] += 1
+                                    except:
+                                        shopping_cart[data.Color_Item(Inventory.Jean_Shorts,'Dark Blue')] = 1
+                                    Inventory.JS_Inventory[data.Color_Item(Inventory.Jean_Shorts, 'Dark Blue')] -= 1
+                                    shopping_cart['Total'] += Inventory.Jean_Shorts.price
+                                    break
+                                else:
+                                    print('OUT OF STOCK')
+                                    break
+                            elif answer.lower() == 'no':
+                                break
+            elif choice.lower() == 'athletic shorts':
+                while True:
+                    print('Available Colors')
+                    show_items_color(Inventory.AS_Inventory)
+                    color_choice = input('Type in what color')
+                    if color_choice.lower() == 'sc':
+                        print('Shopping Cart:',shopping_cart)
+                    elif color_choice.lower() == 'back':
+                        break
+                    elif color_choice.lower() == 'light blue':
+                        while True:
+                            print('Add To Cart?(YES or NO)',Inventory.Athletic_shorts,'Color: Light Blue')
+                            answer = input()
+                            if answer.lower() == 'yes':
+                                if Inventory.AS_Inventory[data.Color_Item(Inventory.Athletic_shorts,'Light Blue')] >= 1:
+                                    try:
+                                        shopping_cart[data.Color_Item(Inventory.Athletic_shorts,'Light Blue')] += 1
+                                    except:
+                                        shopping_cart[data.Color_Item(Inventory.Athletic_shorts,'Light Blue')] = 1
+                                    Inventory.AS_Inventory[data.Color_Item(Inventory.Athletic_shorts, 'Light Blue')] -= 1
+                                    shopping_cart['Total'] += Inventory.Athletic_shorts.price
+                                    break
+                                else:
+                                    print('OUT OF STOCK')
+                                    break
+                            elif answer.lower() == 'no':
+                                break
+                    elif color_choice.lower() == 'black':
+                        while True:
+                            print('Add To Cart?(YES or NO)',Inventory.Athletic_shorts,'Color: Black')
+                            answer = input()
+                            if answer.lower() == 'yes':
+                                if Inventory.AS_Inventory[data.Color_Item(Inventory.Athletic_shorts,'Black')] >= 1:
+                                    try:
+                                        shopping_cart[data.Color_Item(Inventory.Athletic_shorts,'Black')] += 1
+                                    except:
+                                        shopping_cart[data.Color_Item(Inventory.Athletic_shorts,'Black')] = 1
+                                    Inventory.AS_Inventory[data.Color_Item(Inventory.Athletic_shorts, 'Black')] -= 1
+                                    shopping_cart['Total'] += Inventory.Athletic_shorts.price
+                                    break
+                                else:
+                                    print('OUT OF STOCK')
+                                    break
+                            elif answer.lower() == 'no':
+                                break
+                    elif color_choice.lower() == 'dark blue':
+                        while True:
+                            print('Add To Cart?(YES or NO)',Inventory.Athletic_shorts,'Color: Dark Blue')
+                            answer = input()
+                            if answer.lower() == 'yes':
+                                if Inventory.AS_Inventory[data.Color_Item(Inventory.Athletic_shorts,'Dark Blue')] >= 1:
+                                    try:
+                                        shopping_cart[data.Color_Item(Inventory.Athletic_shorts,'Dark Blue')] += 1
+                                    except:
+                                        shopping_cart[data.Color_Item(Inventory.Athletic_shorts,'Dark Blue')] = 1
+                                    Inventory.AS_Inventory[data.Color_Item(Inventory.Athletic_shorts, 'Dark Blue')] -= 1
+                                    shopping_cart['Total'] += Inventory.Athletic_shorts.price
+                                    break
+                                else:
+                                    print('OUT OF STOCK')
+                                    break
+                            elif answer.lower() == 'no':
+                                break
+            elif choice.lower() == 'sweat shorts':
+                while True:
+                    print('Available Colors')
+                    show_items_color(Inventory.SS_Inventory)
+                    color_choice = input('Type in what color')
+                    if color_choice.lower() == 'sc':
+                        print('Shopping Cart:',shopping_cart)
+                    elif color_choice.lower() == 'back':
+                        break
+                    elif color_choice.lower() == 'light blue':
+                        while True:
+                            print('Add To Cart?(YES or NO)',Inventory.Sweat_shorts,'Color: Light Blue')
+                            answer = input()
+                            if answer.lower() == 'yes':
+                                if Inventory.SS_Inventory[data.Color_Item(Inventory.Sweat_shorts,'Light Blue')] >= 1:
+                                    try:
+                                        shopping_cart[data.Color_Item(Inventory.Sweat_shorts,'Light Blue')] += 1
+                                    except:
+                                        shopping_cart[data.Color_Item(Inventory.Sweat_shorts,'Light Blue')] = 1
+                                    Inventory.SS_Inventory[data.Color_Item(Inventory.Sweat_shorts, 'Light Blue')] -= 1
+                                    shopping_cart['Total'] += Inventory.Sweat_shorts.price
+                                    break
+                                else:
+                                    print('OUT OF STOCK')
+                                    break
+                            elif answer.lower() == 'no':
+                                break
+                    elif color_choice.lower() == 'black':
+                        while True:
+                            print('Add To Cart?(YES or NO)',Inventory.Sweat_shorts,'Color: Black')
+                            answer = input()
+                            if answer.lower() == 'yes':
+                                if Inventory.SS_Inventory[data.Color_Item(Inventory.Sweat_shorts,'Black')] >= 1:
+                                    try:
+                                        shopping_cart[data.Color_Item(Inventory.Sweat_shorts,'Black')] += 1
+                                    except:
+                                        shopping_cart[data.Color_Item(Inventory.Sweat_shorts,'Black')] = 1
+                                    Inventory.SS_Inventory[data.Color_Item(Inventory.Sweat_shorts, 'Black')] -= 1
+                                    shopping_cart['Total'] += Inventory.Sweat_shorts.price
+                                    break
+                                else:
+                                    print('OUT OF STOCK')
+                                    break
+                            elif answer.lower() == 'no':
+                                break
+                    elif color_choice.lower() == 'dark blue':
+                        while True:
+                            print('Add To Cart?(YES or NO)',Inventory.Sweat_shorts,'Color: Dark Blue')
+                            answer = input()
+                            if answer.lower() == 'yes':
+                                if Inventory.SS_Inventory[data.Color_Item(Inventory.Sweat_shorts,'Dark Blue')] >= 1:
+                                    try:
+                                        shopping_cart[data.Color_Item(Inventory.Sweat_shorts,'Dark Blue')] += 1
+                                    except:
+                                        shopping_cart[data.Color_Item(Inventory.Sweat_shorts,'Dark Blue')] = 1
+                                    Inventory.SS_Inventory[data.Color_Item(Inventory.Sweat_shorts, 'Dark Blue')] -= 1
+                                    shopping_cart['Total'] += Inventory.Sweat_shorts.price
+                                    break
+                                else:
+                                    print('OUT OF STOCK')
+                                    break
+                            elif answer.lower() == 'no':
+                                break
