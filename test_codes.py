@@ -68,7 +68,7 @@ class MyTestCase(unittest.TestCase):
                     'Item Baby tee, Price 16.99, Color Green: 1'
                     '=============================='
                     'Total Amount: $50.97'
-                    '=============================='
+                    '============================== '
                     'Thank you for shopping with us!')
         codes.generate_receipt(sc)
 

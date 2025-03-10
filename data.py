@@ -1,4 +1,4 @@
-class Item: # Sofia Castellanos
+class Item: # Author: Sofia Castellanos
     def __init__(self,item_id,item_name,price):
         self.item_id = item_id  #each item id will be unique
         self.item_name = item_name
@@ -8,7 +8,7 @@ class Item: # Sofia Castellanos
     def __repr__(self)-> str:
         return 'Item {}, Price {}'.format(self.item_name,self.price)
 
-class Color_Item: #Kate Baur
+class Color_Item: # Author: Kate Baur
     def __init__(self,item:Item, color:str):
         self.item = item
         self.color = color

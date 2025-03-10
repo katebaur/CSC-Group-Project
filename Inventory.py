@@ -1,9 +1,9 @@
 import data
 
-def sum_of_items(item_inventory:dict[data.Color_Item:int]) -> int: # Sofia Castellanos
+def sum_of_items(item_inventory:dict[data.Color_Item:int]) -> int: # Author: Sofia Castellanos
     return sum(item_inventory.values()) # This function takes dictionaries of styles and adds up all the values so we know the quantity of each item
 
-def sum_of_all_items(category_1:int, category_2:int, category_3:int) -> int: # Kate Baur
+def sum_of_all_items(category_1:int, category_2:int, category_3:int) -> int: # Author: Kate Baur
     sum = category_1 + category_2 + category_3 # This function takes all the inventories we have and adds all the total items so we can gave one number of all our products
     return sum
 

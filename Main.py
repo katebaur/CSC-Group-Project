@@ -3,11 +3,11 @@ import data
 from Inventory import (BT_Inventory)
 
 # This function takes the items in the given lists, and displays the style and price
-def show_items(item_lst:list[data.Item]) -> None: # Sofia Castellanos
+def show_items(item_lst:list[data.Item]) -> None: # Author: Sofia Castellanos
     for item in item_lst:
         print('Style: {} Price: {}'.format(item.item_name,item.price))
 # This function takes the items in the dictionary and display the available colors
-def show_items_color(item_inv_lst:dict) -> None: #Sofia Castellanos
+def show_items_color(item_inv_lst:dict) -> None: # Author: Sofia Castellanos
     for key in item_inv_lst.keys():
         print('Color: {}'.format(key.color))
 
