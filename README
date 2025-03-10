@@ -1,0 +1,10 @@
+Final Project
+by Sofia Castellanos and Kate Baur
+
+Our project is an interactive retail stores where users can buy products that are kept in our inventory
+We have three categories: Tops, Bottoms and Dresses
+In each category we had three styles and three different colors for each
+Users can go back by typing BACK or go to home page by typing HOME
+Users can check shopping cart at any time by typing SC
+Users can check out in home page by typing CHECKOUT
+Users have a choice to pay with cash or card and whether they want their receipt or not

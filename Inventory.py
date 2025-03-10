@@ -1,10 +1,10 @@
 import data
 
-def sum_of_items(item_inventory:dict[data.Color_Item:int]) -> int:
-    return sum(item_inventory.values())
+def sum_of_items(item_inventory:dict[data.Color_Item:int]) -> int: # Sofia Castellanos
+    return sum(item_inventory.values()) # This function takes dictionaries of styles and adds up all the values so we know the quantity of each item
 
-def sum_of_all_items(category_1:int, category_2:int, category_3:int) -> int:
-    sum = category_1 + category_2 + category_3
+def sum_of_all_items(category_1:int, category_2:int, category_3:int) -> int: # Kate Baur
+    sum = category_1 + category_2 + category_3 # This function takes all the inventories we have and adds all the total items so we can gave one number of all our products
     return sum
 
 # Inventory for Tops
@@ -25,7 +25,7 @@ Tops = [Baby_Tee,Tank_Top,Tube_Top]
 # An inventory of the different type of tops with the number of the quantity of each top
 Tops_Inventory = {Baby_Tee:Sum_BT,Tank_Top:Sum_TaT,Tube_Top:Sum_TuT}
 # The total number of tops
-Total_Tops = sum_of_all_items(Sum_BT,Sum_TaT,Sum_TaT)
+Total_Tops = sum_of_all_items(Sum_BT,Sum_TaT,Sum_TuT)
 
 
 # Inventory for Bottoms
@@ -53,9 +53,9 @@ Total_Bottoms = sum_of_all_items(Sum_JS,Sum_AS,Sum_SS)
 # Define what type of dresses
 Mini_dress = data.Item(130,'Mini Dress',34.99)
 Midi_dress = data.Item(131,'Midi Dress',39.99)
-Maxi_dress = data.Item(130,'Maxi Dress',40.99)
+Maxi_dress = data.Item(132,'Maxi Dress',40.99)
 # How many colors in each type of dress and how many of each color
-Mini_Inventory ={data.Color_Item(Mini_dress,'Light Blue'):10,data.Color_Item(Mini_dress,'Black'):10,data.Color_Item(Mini_dress,'Dark Blue'):10}
+Mini_Inventory ={data.Color_Item(Mini_dress,'Light Blue'):10,data.Color_Item(Mini_dress,'Black'):24,data.Color_Item(Mini_dress,'Dark Blue'):10}
 Midi_Inventory = {data.Color_Item(Midi_dress,'Light Blue'):19,data.Color_Item(Midi_dress,'Black'):7,data.Color_Item(Midi_dress,'Dark Blue'):13}
 Maxi_Inventory = {data.Color_Item(Maxi_dress,'Light Blue'):21,data.Color_Item(Maxi_dress,'Black'):10,data.Color_Item(Maxi_dress,'Dark Blue'):19}
 # The total dresses for each type of dress
