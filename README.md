@@ -1,0 +1,1 @@
+This project manages an inventory system for a clothing store, tracking different categories of items such as Tops, Bottoms, and Dresses. The program calculates the total inventory of each category and provides a structured way to manage stock levels.
